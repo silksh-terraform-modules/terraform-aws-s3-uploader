@@ -1,0 +1,34 @@
+[
+{
+  "variable_type": "env_var",
+  "key": "AWS_ACCESS_KEY_ID",
+  "value": "${access_key}",
+  "protected": false,
+  "masked": false,
+  "environment_scope": "${env_scope}"
+},
+{
+  "variable_type": "env_var",
+  "key": "AWS_SECRET_ACCESS_KEY",
+  "value": "${secret_key}",
+  "protected": false,
+  "masked": false,
+  "environment_scope": "${env_scope}"
+},
+{
+  "variable_type": "env_var",
+  "key": "FRONT_DOMAIN_NAME",
+  "value": "${app_domain_name}",
+  "protected": false,
+  "masked": false,
+  "environment_scope": "${env_scope}"
+},
+{
+  "variable_type": "env_var",
+  "key": "FRONT_DOMAIN_BUCKET",
+  "value": "${app_bucket}",
+  "protected": false,
+  "masked": false,
+  "environment_scope": "${env_scope}"
+}
+]
