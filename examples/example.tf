@@ -23,11 +23,11 @@ module "example" {
   tlds = [
     {
       domain = module.example_cloudfront.app_domain_name,
-      bucket = module.example_cloudfront.source_bucket
+      bucket = module.example_cloudfront.bucket_arn
     },
     {
       domain = module.example_cloudfront2.app_domain_name,
-      bucket = module.example_cloudfront2.source_bucket
+      bucket = module.example_cloudfront2.bucket_arn
     }
   ]
   env_scope = "branch"
