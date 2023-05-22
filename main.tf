@@ -1,5 +1,5 @@
 resource "aws_iam_user" "s3_cf_apps_uploader" {
-  name = "s3_cf_apps_uploader_${var.env_scope}"
+  name = "s3_cf_apps_uploader_${replace(var.env_scope, "/", "_")}"
   tags = {
     description = "user with permissions to upload static apps to appropriate s3 buckets"
   }
@@ -20,7 +20,7 @@ locals {
 }
 
 resource "aws_iam_policy" "s3_cf_apps_upload" {
-  name = "s3_cf_apps_upload_${var.env_scope}"
+  name = "s3_cf_apps_upload_${replace(var.env_scope, "/", "_")}"
 
   policy = <<DOC
 {
@@ -70,5 +70,5 @@ resource "local_file" "gitlab-environment" {
     app_domain_name           = "${each.value.domain}"
     app_bucket                = "${each.value.bucket}"
   })
-    filename = "${path.root}/.terraform/${each.key}-gitlab-environment-${var.env_scope}.json"
+    filename = "${path.root}/.terraform/${each.key}-gitlab-environment-${replace(var.env_scope, "/", "_")}.json"
 }
